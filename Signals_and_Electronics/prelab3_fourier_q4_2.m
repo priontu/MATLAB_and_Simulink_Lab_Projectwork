@@ -1,0 +1,12 @@
+[AudioInput,Fs] = audioread("sound_sample.wav");
+t = 0:1/Fs:(numel(AudioInput)-1)/Fs;
+L = 450;
+t_dom = t(1:450);
+Data = AudioInput(1:L);
+plot(t_dom, Data);
+xlabel("Time/s");
+ylabel("Amplitude");
+ylim([-1.2, 1.2]);
+xlim([0, 0.01]);
+title("Sound Sample in Time Domain");
+grid on;
